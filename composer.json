@@ -1,0 +1,21 @@
+{
+    "name": "ken/spider-admin",
+    "description": "make AdminLTE for laravel 5.3",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ken",
+            "email": "wahyu.dhiraashandy8@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+      "illuminate/support": "~5.1",
+      "laravel/framework": "5.3.*"
+    },
+    "autoload": {
+      "psr-4": {
+        "Ken\\SpiderAdmin\\": "src"
+      }
+    }
+}
