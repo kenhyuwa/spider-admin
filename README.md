@@ -14,7 +14,7 @@ Ken\SpiderAdmin\App\Providers\SpiderAdminServiceProvider::class,
 ```
 and
 ```
-composer vendor:publish
+php artisan vendor:publish
 ```
 ## Usage
 
