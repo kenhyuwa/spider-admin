@@ -46,12 +46,12 @@
         <p class="login-box-msg">Sign in to start your session</p>
         <form role="form" method="POST" action="{{ url(config('spider.route_prefix').'/login') }}">
             {{ csrf_field() }}
-          <div class="form-group has-feedback{{ $errors->has('username') ? ' has-error' : '' }}">
-            <input type="text" class="form-control" placeholder="Username" name="username" value="{{ old('username') }}" required autofocus autocomplete="off">
+          <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
+            <input type="text" class="form-control" placeholder="Username" name="name" value="{{ old('name') }}" required autofocus autocomplete="off">
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
-            @if ($errors->has('username'))
+            @if ($errors->has('name'))
                 <span class="help-block">
-                    <strong>{{ $errors->first('username') }}</strong>
+                    <strong>{{ $errors->first('name') }}</strong>
                 </span>
             @endif
           </div>
@@ -113,7 +113,7 @@
             $(this).fadeOut('fast');
         });
 
-        @if($errors->has('username'))
+        @if($errors->has('name'))
           $('.login-box-body').addClass('animated wobble');
         @elseif($errors->has('password'))
           $('.login-box-body').addClass('animated flash');

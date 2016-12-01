@@ -24,10 +24,22 @@ class SpiderAdminServiceProvider extends ServiceProvider
 
 		$this->mergeConfigFrom(__DIR__.'/../../config/spider/config.php', 'spider');
 
-		$this->publishes([__DIR__.'/../../resources/views/vendor' => resource_path('views/vendor/spider')], 'views');
+		$this->publishes([__DIR__.'/../../resources/views/vendor/layouts' => resource_path('views/vendor/spider/layouts')], 'views');
+
+		$this->publishes([__DIR__.'/../../resources/views/vendor/partials' => resource_path('views/vendor/spider/partials')], 'views');
+
+		$this->publishes([__DIR__.'/../../resources/views/vendor/sample' => resource_path('views')], 'view');
 
 		$this->publishes([__DIR__.'/../../public' => public_path('vendor')], 'asset');
 
-		$this->publishes([__DIR__.'/../../config' => config_path()], 'config');
+		// $this->publishes([__DIR__.'/../../config' => config_path()], 'config');
+
+		$this->publishes([__DIR__.'/../Models' => base_path('app').'/Models'], 'models');
+
+		$this->publishes([__DIR__.'/../../database/factories' => database_path().'/factories'], 'factories');
+
+		$this->publishes([__DIR__.'/../../database/migrations' => database_path().'/migrations'], 'migrations');
+
+		$this->publishes([__DIR__.'/../../database/seeds' => database_path().'/seeds'], 'seeds');
 	}
 }

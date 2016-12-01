@@ -13,6 +13,6 @@ class SpiderAdminController extends Controller
 
   public function index()
   {
-    return view('spider::dashboard');
+    return view('home');
   }
 }

@@ -326,7 +326,7 @@
     <!-- page script -->
     <script type="text/javascript">
         // To make Pace works on Ajax calls
-        $(document).ajaxStart(function() { Pace.restart(); });
+        // $(document).ajaxStart(function() { Pace.restart(); });
 
         // Ajax calls should always have the CSRF token attached to them, otherwise they won't work
         $.ajaxSetup({

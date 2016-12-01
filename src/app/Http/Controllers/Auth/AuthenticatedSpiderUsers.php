@@ -2,6 +2,8 @@
 
 namespace Ken\SpiderAdmin\App\Http\Controllers\Auth;
 
+use Ken\SpiderAdmin\App\Models\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
@@ -129,7 +131,7 @@ trait AuthenticatedSpiderUsers
      */
     public function username()
     {
-        return 'username';
+        return 'name';
     }
 
     /**
