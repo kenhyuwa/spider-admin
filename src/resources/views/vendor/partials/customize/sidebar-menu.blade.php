@@ -30,9 +30,3 @@
         <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
       </ul>
     </li>
-    <li class="header">SETTING</li>
-    <li class="treeview">
-      <a href="#">
-        <i class="fa fa-users"></i> <span> Users</span>
-      </a>
-    </li>

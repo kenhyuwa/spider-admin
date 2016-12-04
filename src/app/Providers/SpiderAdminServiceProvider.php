@@ -32,7 +32,7 @@ class SpiderAdminServiceProvider extends ServiceProvider
 
 		$this->publishes([__DIR__.'/../../public' => public_path('vendor')], 'asset');
 
-		// $this->publishes([__DIR__.'/../../config' => config_path()], 'config');
+		$this->publishes([__DIR__.'/../../config' => config_path()], 'config');
 
 		$this->publishes([__DIR__.'/../Models' => base_path('app').'/Models'], 'models');
 

@@ -2,22 +2,22 @@
 <!-- User Account: style can be found in dropdown.less -->
 <li class="dropdown user user-menu">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    <img src="{{ asset('vendor/spider/alte/dist/img/'.auth()->user()->getProfile->images_profile) }}" class="user-image" alt="User Image">
+    <img src="{{ asset('vendor/upload/images/thumbnails/'.auth()->user()->getProfile->images_profile) }}" class="user-image user-online" alt="User Image">
     <span class="hidden-xs">
       <?php 
           $users = auth()->user()->getProfile->name;
           $jumlah = 1;
           $hasil = implode(' ', array_slice(explode(' ', $users), 0, $jumlah));
         ?>
-      <i>{{ ucfirst($hasil) }}'s</i>
+      <i class="user-name">{{ ucfirst($hasil) }}'s</i>
     </span>
   </a>
   <ul class="dropdown-menu">
     <!-- User image -->
     <li class="user-header">
-      <img src="{{ asset('vendor/spider/alte/dist/img/'.auth()->user()->getProfile->images_profile) }}" class="img-circle" alt="User Image">
+      <img src="{{ asset('vendor/upload/images/thumbnails/'.auth()->user()->getProfile->images_profile) }}" class="img-circle user-online" alt="User Image">
       <p>
-        {{ ucwords(auth()->user()->getProfile->name) }}
+        <span class="user-name">{{ ucwords(auth()->user()->getProfile->name) }}</span>
         <small>Member since Nov. 2012</small>
       </p>
     </li>

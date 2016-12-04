@@ -3,7 +3,7 @@
   <!-- Sidebar user panel -->
   <div class="user-panel">
     <div class="pull-left image">
-      <img src="{{ asset('vendor/spider/alte/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+      <img src="{{ asset('vendor/upload/images/thumbnails/'.auth()->user()->getProfile->images_profile) }}" class="img-circle user-online" alt="User Image">
     </div>
     <div class="pull-left info">
       <?php 
@@ -11,7 +11,7 @@
           $jumlah = 1;
           $hasil = implode(' ', array_slice(explode(' ', $users), 0, $jumlah));
         ?>
-      <p>{{ ucfirst($hasil) }}'s</p>
+      <p class="user-name">{{ ucfirst($hasil) }}'s</p>
       <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
     </div>
   </div>
@@ -24,6 +24,15 @@
       </a>
     </li>
     @include('spider::partials.customize.sidebar-menu')
+    @if (auth()->user()->getProfile->roles != 'admin')
+    @else
+    <li class="header">SETTING</li>
+    <li class="treeview">
+      <a href="{{ URL(config('spider.route_prefix').'/users') }}">
+        <i class="fa fa-users"></i> <span> Users</span>
+      </a>
+    </li>
+    @endif
   </ul>
 </section>
 <!-- /.sidebar -->

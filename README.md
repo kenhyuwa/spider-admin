@@ -60,9 +60,19 @@ to be
         // ],
     ],
 ```
+
+## Setting Kernel
+
+place this code to `App\Http\Kernel.php`
+
+```php
+protected $routeMiddleware = [
+        'spider' => \Ken\SpiderAdmin\App\Http\Middleware\SpiderToRedirect::class,
+    ];
+```
 ## Usage
 
-You can custom `views/vendor/spider/partials/customize/sidebar-menu.blade.php` for managemen menu
+You can custom `views/vendor/spider/partials/customize/sidebar-menu.blade.php` for managemen menu.
 You can custom `views/vendor/spider/partials/customize/dropdown.blade.php` for notifications
 
 If you create new blade, you must extends yours file like
@@ -83,7 +93,7 @@ You can also create new file Javascript or CSS,
 @endsection
 
 @section('script')
-    // yours scrit in here 
+    // yours script in here 
 @endsection
 ```
 
@@ -91,7 +101,7 @@ You can also create new `Route` in `Routes/web.php` and its no problem. but, you
 
 ```php 
 Route::group(['prefix' => 'spider'] , function() {
-   // yours route
+   // yours route in here
 });
 ```
 

@@ -62,12 +62,13 @@ class ProfileController extends Controller
 
                 $update = [
                     'name' => $newUsername,
-                    'password' => bcrypt($new)
+                    'password' => bcrypt($new),
+                    'email' => $request['email']
                 ];
 
                 \App\Models\User::where('id', $idProfile)->update($update);
 
-                return response()->json(['simpan' => 'true']);
+                return response()->json(['simpan' => 'true', 'user' => $newUsername, 'email' => $request['email']]);
 
                 }else {
 
@@ -88,11 +89,12 @@ class ProfileController extends Controller
 
                 $update = [
                     'password' => bcrypt($new),
+                    'email' => $request['email']
                 ];
 
                 \App\Models\User::where('id', $idProfile)->update($update);
 
-                return response()->json(['simpan' => 'trues']);
+                return response()->json(['simpan' => 'trues', 'email' => $request['email']]);
 
                 }else {
 

@@ -14,8 +14,8 @@ class DatabaseProfileSeeder extends Seeder
         DB::table('profiles')->insert([
                 'name' => 'wahyu dhira ashandy',
                 'gender' => 'male',
-                'address' => 'Surakarta',
-                'phone' => '085728888888',
+                'address' => 'surakarta',
+                'phone' => '(0857) 28-888-888',
                 'roles' => 'admin',
                 'images_profile' => 'user2-160x160.jpg'
                 ]);

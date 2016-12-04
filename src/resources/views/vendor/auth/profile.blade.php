@@ -32,7 +32,16 @@
                 <div class="col-sm-9">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-users text-blue"></i></span>
-                    <input type="text" class="form-control" value="{{ $account->name }}" disabled="true">
+                    <input type="text" id="username" class="form-control" value="{{ $account->name }}" disabled="true">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">E-mail :</label>
+                <div class="col-sm-9">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope text-blue"></i></span>
+                    <input type="text" id="email" name="email" class="form-control" value="{{ $account->email }}" readonly="true">
                   </div>
                 </div>
               </div>
@@ -113,10 +122,10 @@
           <div class="box-body">
             <div class="box box-widget widget-user">
                 <!-- Add the bg color to the header using any of the bg-* classes -->
-                <div class="widget-user-header bg-black" style="background: url({{ asset('vendor/spider/alte/dist/img/'.$account->getProfile->images_profile) }}) center center; height: 230px;background-size: cover;">
+                <div class="widget-user-header bg-black" style="background: url({{ asset('vendor/upload/images/thumbnails/'.$account->getProfile->images_profile) }}) center center; height: 230px;background-size: cover;">
                 </div>
                 <div class="widget-user-image" style="top: 180px;">
-                  <img class="img-circle" src="{{ asset('vendor/spider/alte/dist/img/'.$account->getProfile->images_profile) }}" alt="User Avatar">
+                  <img class="img-circle" src="{{ asset('vendor/upload/images/thumbnails/'.$account->getProfile->images_profile) }}" alt="User Avatar">
                 </div>
                   <div class="row" style="margin-top: 50px;">
                     <div class="col-sm-12 border-right">
@@ -141,8 +150,17 @@
 @section('script')
 <script>
 
+  $('#email').click(function() {
+    $(this).attr('readonly', false);
+    $('#new-username').attr('readonly', true);
+    $('#oldpassword').attr('readonly', true);
+    $('#password').attr('readonly', true);
+    $('#repassword').attr('readonly', true);
+  });
+
   $('#new-username').click(function() {
     $(this).attr('readonly', false);
+    $('#email').attr('readonly', true);
     $('#oldpassword').attr('readonly', true);
     $('#password').attr('readonly', true);
     $('#repassword').attr('readonly', true);
@@ -150,6 +168,7 @@
 
   $('#oldpassword').click(function() {
     $(this).attr('readonly', false);
+    $('#email').attr('readonly', true);
     $('#new-username').attr('readonly', true);
     $('#password').attr('readonly', true);
     $('#repassword').attr('readonly', true);
@@ -157,6 +176,7 @@
 
   $('#password').click(function() {
     $(this).attr('readonly', false);
+    $('#email').attr('readonly', true);
     $('#new-username').attr('readonly', true);
     $('#oldpassword').attr('readonly', true);
     $('#repassword').attr('readonly', true);
@@ -164,12 +184,13 @@
 
   $('#repassword').click(function() {
     $(this).attr('readonly', false);
+    $('#email').attr('readonly', true);
     $('#new-username').attr('readonly', true);
     $('#oldpassword').attr('readonly', true);
     $('#password').attr('readonly', true);
   });
 
-  $('#new-username,#oldpassword,#password,#repassword').mouseenter(function() {
+  $('#email,#new-username,#oldpassword,#password,#repassword').mouseenter(function() {
     $(this).css('cursor','text');
   });
 
@@ -235,8 +256,9 @@
 
   function validasi()
   {
-      $('#btn-save').html('Processing...');
+      $('#btn-save').html('<i class="fa fa-spinner fa-pulse"></i> Processing...');
       $('#btn-save').attr('disabled',true);
+      $('#email,#new-username,#oldpassword,#password,#repassword').attr('readonly', true);
 
       var url = $('#form').attr('action');
       var formData = $('#form').serialize();
@@ -306,8 +328,9 @@
             $('#form')[0].reset();
             $('#btn-save').html('Save');
             $('#btn-save').attr('disabled',false);
-            $('.error').empty();
-            $('.focus').focus();
+            $('#username').val(data.user);
+            $('#email').val(data.email);
+            $('.description').html(data.email);
             swal({
               title: 'Success !!!',
               text: 'Username dan Password Anda berhasil diubah.',
@@ -320,8 +343,8 @@
             $('#form')[0].reset();
             $('#btn-save').html('Save');
             $('#btn-save').attr('disabled',false);
-            $('.error').empty();
-            $('.focus').focus();
+            $('#email').val(data.email);
+            $('.description').html(data.email);
             swal({
               title: 'Success !!!',
               text: 'Password Anda berhasil diubah.',
