@@ -1,14 +1,15 @@
 #Spider-AdminLTE for laravel 5.3.*
-[Spider-AdminLTE](https://postimg.org/image/ipamihdv7/)
-[diaddemi](https://www.diaddemi.web.id)
+[![a.png](https://s17.postimg.org/igbo0p033/image.png)](https://postimg.org/image/xp1legtrf/)
 
 ## About Spider-AdminLTE
 
+[diaddemi](https://www.diaddemi.web.id)<br/>
+
 Spider-AdminLTE is packages for build dashboard admin make AdminLTE 2 | Dashboard - Almsaeed Studio, just install this packages you get dashboard admin [AdminLTE 2 | Dashboard - Almsaeed Studio](https://almsaeedstudio.com/themes/AdminLTE/index2.html), [SweetAlert2](https://limonte.github.io/sweetalert2), [animate.css](https://daneden.github.io/animate.css)
 Thanks to :
-[AdminLTE 2 | Dashboard - Almsaeed Studio](https://almsaeedstudio.com/themes/AdminLTE/index2.html)
-[SweetAlert2](https://limonte.github.io/sweetalert2)
-[animate.css](https://daneden.github.io/animate.css)
+[AdminLTE 2 | Dashboard - Almsaeed Studio](https://almsaeedstudio.com/themes/AdminLTE/index2.html)<br/>
+[SweetAlert2](https://limonte.github.io/sweetalert2)<br/>
+[animate.css](https://daneden.github.io/animate.css)<br/>
 
 ## Installations
 
@@ -95,7 +96,7 @@ protected $routeMiddleware = [
 ```
 ## Usage
 
-You can custom `views/vendor/spider/partials/customize/sidebar-menu.blade.php` for managemen menu.
+You can custom `views/vendor/spider/partials/customize/sidebar-menu.blade.php` for managemen menu.<br/>
 You can custom `views/vendor/spider/partials/customize/dropdown.blade.php` for notifications
 
 If you create new blade, you must extends yours file like
