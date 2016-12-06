@@ -18,7 +18,7 @@ class SpiderToRedirect
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check() && auth()->user()->getProfile->roles != 'admin') {
-            return redirect(config('spider.route_prefix').'/dashboard');
+            return redirect(config('spider.config.route_prefix').'/dashboard');
         }
 
         return $next($request);

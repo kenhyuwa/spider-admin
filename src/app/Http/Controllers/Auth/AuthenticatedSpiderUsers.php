@@ -43,7 +43,7 @@ trait AuthenticatedSpiderUsers
             return $this->sendLockoutResponse($request);
         }
 
-        $credentials = $this->credentials($request);
+        $credentials = $this->checkStringEmail($request);
 
         if ($this->guard()->attempt($credentials, $request->has('remember'))) {
             return $this->sendLoginResponse($request)->with('success', 'value');
@@ -79,6 +79,23 @@ trait AuthenticatedSpiderUsers
     protected function credentials(Request $request)
     {
         return $request->only($this->username(), 'password');
+    }
+
+    protected function credentialsWithEmail(Request $request)
+    {
+        return [
+            'email' => $request[$this->username()],
+            'password' => $request['password']
+        ];
+    }
+
+    protected function checkStringEmail(Request $request)
+    {
+        $countValue = str_contains($request[$this->username()], '@');
+        if($countValue) {
+            return $makeCredentials = $this->credentialsWithEmail($request);
+        }
+            return $makeCredentials = $this->credentials($request);
     }
 
     /**
@@ -148,7 +165,7 @@ trait AuthenticatedSpiderUsers
 
         $request->session()->regenerate();
 
-        return redirect('/spider')->with('success', 'You have been logout.');
+        return redirect(config('spider.config.route_prefix'))->with('success', 'You have been logout.');
     }
 
     /**

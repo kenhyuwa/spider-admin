@@ -1,14 +1,16 @@
 <?php
 
 Route::get('/login', function() {
-	return redirect()->to('/spider');
+	return redirect()->to(config('spider.config.route_prefix'));
 });
 
 Route::get('/home', function() {
-	return redirect()->to('/spider/dashboard');
+	return redirect()->to(config('spider.config.route_prefix').'/dashboard');
 });
 
-Route::group(['prefix' => 'spider', 'namespace' => 'Ken\SpiderAdmin\App\Http\Controllers\Auth', 'middleware' => 'web'], function() {
+Route::group(['prefix' => config('spider.config.route_prefix'), 
+		'namespace' => 'Ken\SpiderAdmin\App\Http\Controllers\Auth', 
+		'middleware' => 'web'], function() {
 
   Route::get('/', [
 			'as' => 'spider',
@@ -18,10 +20,6 @@ Route::group(['prefix' => 'spider', 'namespace' => 'Ken\SpiderAdmin\App\Http\Con
 			'as' => 'spider',
 			'uses' => 'LoginController@login'
 		]);
-  Route::get('/logout', [
-			'as' => 'spider',
-			'uses' => 'LoginController@logout'
-		]);
   Route::post('/logout', [
 			'as' => 'spider',
 			'uses' => 'LoginController@logout'
@@ -29,7 +27,10 @@ Route::group(['prefix' => 'spider', 'namespace' => 'Ken\SpiderAdmin\App\Http\Con
 
 });
 
-Route::group(['prefix' => 'spider', 'namespace' => 'Ken\SpiderAdmin\App\Http\Controllers', 'middleware' => ['web', 'auth']], function() {
+Route::group(['prefix' => config('spider.config.route_prefix'), 
+		'namespace' => 'Ken\SpiderAdmin\App\Http\Controllers', 
+		'middleware' => ['web', 'auth']], function() {
+
   Route::get('/dashboard', [
 			'as' => 'spider',
 			'uses' => 'SpiderAdminController@index'
@@ -44,7 +45,10 @@ Route::group(['prefix' => 'spider', 'namespace' => 'Ken\SpiderAdmin\App\Http\Con
 		]);
 });
 
-Route::group(['prefix' => 'spider', 'namespace' => 'Ken\SpiderAdmin\App\Http\Controllers', 'middleware' => ['web', 'auth', 'spider']], function() {
+Route::group(['prefix' => config('spider.config.route_prefix'), 
+		'namespace' => 'Ken\SpiderAdmin\App\Http\Controllers', 
+		'middleware' => ['web', 'auth', 'spider']], function() {
+
   Route::get('/users', [
 			'as' => 'spider',
 			'uses' => 'UserController@usersAll'

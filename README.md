@@ -1,5 +1,14 @@
 #Spider-AdminLTE for laravel 5.3.*
+[Spider-AdminLTE](https://postimg.org/image/ipamihdv7/)
+[diaddemi](https://www.diaddemi.web.id)
 
+## About Spider-AdminLTE
+
+Spider-AdminLTE is packages for build dashboard admin make AdminLTE 2 | Dashboard - Almsaeed Studio, just install this packages you get dashboard admin [AdminLTE 2 | Dashboard - Almsaeed Studio](https://almsaeedstudio.com/themes/AdminLTE/index2.html), [SweetAlert2](https://limonte.github.io/sweetalert2), [animate.css](https://daneden.github.io/animate.css)
+Thanks to :
+[AdminLTE 2 | Dashboard - Almsaeed Studio](https://almsaeedstudio.com/themes/AdminLTE/index2.html)
+[SweetAlert2](https://limonte.github.io/sweetalert2)
+[animate.css](https://daneden.github.io/animate.css)
 
 ## Installations
 
@@ -12,7 +21,18 @@ composer require ken/spider-admin
 Add the service provider to `config/app.php`
 
 ```php
-Ken\SpiderAdmin\App\Providers\SpiderAdminServiceProvider::class,
+
+'providers' => [
+    Ken\SpiderAdmin\App\Providers\SpiderAdminServiceProvider::class,
+    Collective\Html\HtmlServiceProvider::class, // laravelcollective/html class
+    Intervention\Image\ImageServiceProvider::class, // intervention/image class
+]
+
+'aliases' => [
+    'Form' => Collective\Html\FormFacade::class,
+    'Html' => Collective\Html\HtmlFacade::class,
+    'Image' => Intervention\Image\Facades\Image::class,
+]
 ```
 
 and running
@@ -107,7 +127,16 @@ Route::group(['prefix' => 'spider'] , function() {
    // yours route in here
 });
 ```
->You can customize `config/spider/config.php` for identity yours app.
+if you not change route prefix yours App, or like 
+
+```php 
+Route::group(['prefix' => config('spider.config.route_prefix')] , function() {
+   // yours route in here
+});
+```
+if you change route prefix yours App.
+
+You can customize `config/spider/config.php` for identity yours app and yours route prefix 
 
 ### Basic
 
@@ -118,8 +147,10 @@ localhost:8000/spider
 ````
 Auth Basic
 
+Basic Credentials this App is fields `name` or  fields `email` from table `users`
+
 ```
-username : spider 
+username : spider `or` spider@diaddemi.web.id
 password : spider 
 ```
 

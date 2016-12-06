@@ -3,6 +3,7 @@
 namespace Ken\SpiderAdmin\App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Ken\SpiderAdmin\Config\ConfigRoutes;
 use Ken\SpiderAdmin\App\Http\Controllers\Auth\AuthenticatedSpiderUsers;
 
 class LoginController extends Controller
@@ -18,7 +19,7 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatedSpiderUsers;
+    use AuthenticatedSpiderUsers, ConfigRoutes;
 
     /**
      * Where to redirect users after login.
@@ -26,11 +27,11 @@ class LoginController extends Controller
      * @var string
      */
     // if not logged in redirect to
-    protected $loginPath = 'spider/login';
+    // protected $loginPath = 'spider/login';
     // after you've logged in redirect to
-    protected $redirectTo = 'spider/dashboard';
+    // protected $redirectTo = 'spider/dashboard';
     // after you've logged out redirect to
-    protected $redirectAfterLogout = 'spider';
+    // protected $redirectAfterLogout = 'spider';
 
     /**
      * Create a new controller instance.
