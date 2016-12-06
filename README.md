@@ -1,12 +1,12 @@
 #Spider-AdminLTE for laravel 5.3.*
-[![a.png](https://s17.postimg.org/igbo0p033/image.png)](https://postimg.org/image/xp1legtrf/)
+[a.png](https://postimg.org/image/qkxqqa03r/)
 
 ## About Spider-AdminLTE
 
 [diaddemi](https://www.diaddemi.web.id)<br/>
 
-Spider-AdminLTE is packages for build dashboard admin make AdminLTE 2 | Dashboard - Almsaeed Studio, just install this packages you get dashboard admin [AdminLTE 2 | Dashboard - Almsaeed Studio](https://almsaeedstudio.com/themes/AdminLTE/index2.html), [SweetAlert2](https://limonte.github.io/sweetalert2), [animate.css](https://daneden.github.io/animate.css)
-Thanks to :
+Spider-AdminLTE is packages for build dashboard admin make AdminLTE 2 | Dashboard - Almsaeed Studio, just install this packages you get dashboard admin [AdminLTE 2 | Dashboard - Almsaeed Studio](https://almsaeedstudio.com/themes/AdminLTE/index2.html), [SweetAlert2](https://limonte.github.io/sweetalert2), [animate.css](https://daneden.github.io/animate.css)<br/>
+Thanks to :<br/>
 [AdminLTE 2 | Dashboard - Almsaeed Studio](https://almsaeedstudio.com/themes/AdminLTE/index2.html)<br/>
 [SweetAlert2](https://limonte.github.io/sweetalert2)<br/>
 [animate.css](https://daneden.github.io/animate.css)<br/>
