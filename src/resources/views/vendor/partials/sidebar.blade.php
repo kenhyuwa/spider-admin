@@ -19,7 +19,7 @@
   <ul class="sidebar-menu">
     <li class="header">MAIN NAVIGATION</li>
     <li class="treeview">
-      <a href="{{ URL(config('spider.route_prefix').'/dashboard') }}">
+      <a href="{{ URL(config('spider.config.route_prefix').'/dashboard') }}">
         <i class="fa fa-google-wallet"></i> <span> Dashboard</span>
       </a>
     </li>
@@ -28,7 +28,7 @@
     @else
     <li class="header">SETTING</li>
     <li class="treeview">
-      <a href="{{ URL(config('spider.route_prefix').'/users') }}">
+      <a href="{{ URL(config('spider.config.route_prefix').'/users') }}">
         <i class="fa fa-users"></i> <span> Users</span>
       </a>
     </li>

@@ -13,7 +13,7 @@
 <!-- Main content -->
 <section class="content">
 <!-- form start -->
-<form method="POST" action="{{ URL(config('spider.route_prefix').'/my-profile/'.base64_encode($account->id)) }}" class="form-horizontal" id="form">
+<form method="POST" action="{{ URL(config('spider.config.route_prefix').'/my-profile/'.base64_encode($account->id)) }}" class="form-horizontal" id="form">
 {{ csrf_field() }}
   <div class="row">
     <div class="col-md-8">

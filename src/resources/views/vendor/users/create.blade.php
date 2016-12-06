@@ -145,7 +145,7 @@
   function save()
   {
     $('#btn-save').html('<i class="fa fa-spinner fa-pulse"></i> Processing...');
-    var route = '{{ URL(config('spider.route_prefix').'/users/create') }}';
+    var route = '{{ URL(config('spider.config.route_prefix').'/users/create') }}';
     var formData = new FormData($("#form")[0]);
     $.ajax({
       type:'POST',

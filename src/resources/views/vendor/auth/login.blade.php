@@ -6,7 +6,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Login System</title>
+    <title>{!! config('spider.config.title_name_login') !!}</title>
 
     <!-- Styles -->
     <!-- Tell the browser to be responsive to screen width -->
@@ -35,7 +35,7 @@
   <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="">{!! config('spider.application_name') !!}</a>
+        <a href="">{!! config('spider.config.application_name') !!}</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
       @if( Session::has( 'success' ) )
@@ -44,7 +44,7 @@
         </div>
       @endif
         <p class="login-box-msg">Sign in to start your session</p>
-        <form role="form" method="POST" action="{{ url(config('spider.route_prefix').'/login') }}">
+        <form role="form" method="POST" action="{{ url(config('spider.config.route_prefix').'/login') }}">
             {{ csrf_field() }}
           <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
             <input type="text" class="form-control" placeholder="Username" name="name" value="{{ old('name') }}" required autofocus autocomplete="off">
@@ -82,7 +82,7 @@
 
         <div class="social-auth-links text-center">
           <small>
-              <p>&copy;&nbsp;2016 All rights reserved.<br/><a href="{!! config('spider.developer_web') !!}" target="_blank">Supported by {!! config('spider.developer_name') !!}</a></p>
+              <p>&copy;&nbsp;2016 All rights reserved.<br/><a href="{!! config('spider.config.developer_web') !!}" target="_blank">Supported by {!! config('spider.config.developer_name') !!}</a></p>
           </small>
         </div><!-- /.social-auth-links -->
 

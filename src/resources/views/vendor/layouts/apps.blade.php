@@ -6,7 +6,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('spider.title_name', 'Spider-AdminLTE') }} | @yield('title')</title>
+    <title>{{ config('spider.config.title_name', 'Spider-AdminLTE') }} | @yield('title')</title>
 
     <!-- Styles -->
     <!-- Tell the browser to be responsive to screen width -->
@@ -73,9 +73,9 @@
         <!-- Logo -->
         <a href="" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini">SPL</span>
+          <span class="logo-mini">{!! config('spider.config.application_name_mini') !!}</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">{!! config('spider.application_name') !!}</span>
+          <span class="logo-lg">{!! config('spider.config.application_name') !!}</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">

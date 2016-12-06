@@ -24,6 +24,9 @@ php artisan vendor:publish
 php artisan migrate
 ```
 ```
+composer dumpautoload
+```
+```
 php artisan db:seed --class=SpiderSeeder
 ```
 
@@ -63,7 +66,7 @@ to be
 
 ## Setting Kernel
 
-place this code to `App\Http\Kernel.php`
+place this code in to `App\Http\Kernel.php`
 
 ```php
 protected $routeMiddleware = [
@@ -104,6 +107,7 @@ Route::group(['prefix' => 'spider'] , function() {
    // yours route in here
 });
 ```
+>You can customize `config/spider/config.php` for identity yours app.
 
 ### Basic
 

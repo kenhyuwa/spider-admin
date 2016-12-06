@@ -261,7 +261,7 @@
     // var authID = authID;
     $.ajax({
       type: 'GET',
-      url:"{{ URL(config('spider.route_prefix').'/users/') }}/"+id,
+      url:"{{ URL(config('spider.config.route_prefix').'/users/') }}/"+id,
       success: function(data) {
         if(profile_id == authID) {
           $('.user-online').attr('src', "{{ asset('vendor/upload/images/thumbnails') }}/"+data.images_profile);
@@ -281,7 +281,7 @@
   function save()
   {
     $('#btn-save').html('<i class="fa fa-spinner fa-pulse"></i> Processing...');
-    var route = '{{ URL(config('spider.route_prefix').'/users/'.base64_encode($detail->id)) }}';
+    var route = '{{ URL(config('spider.config.route_prefix').'/users/'.base64_encode($detail->id)) }}';
     var formData = new FormData($("#myForm")[0]);
     var id = "{{ base64_encode($detail->id) }}";
     var authID = "{{ auth()->user()->getProfile->id }}";

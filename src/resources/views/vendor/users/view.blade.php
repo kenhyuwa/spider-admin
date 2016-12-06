@@ -19,7 +19,7 @@
           <div class="box-header with-border">
             <h3 class="box-title">User</h3>
             <div class="box-tools pull-right">
-              <a href="{{ URL(config('spider.route_prefix').'/users/create') }}" class="btn btn-xs btn-flat btn-primary"><i class="fa fa-edit"></i> Add User</a>
+              <a href="{{ URL(config('spider.config.route_prefix').'/users/create') }}" class="btn btn-xs btn-flat btn-primary"><i class="fa fa-edit"></i> Add User</a>
               <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
               <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
             </div>
@@ -41,7 +41,7 @@
 <script>
     function listUser()
     {
-      var url = APP_URL+'/{{ config('spider.route_prefix') }}/user';
+      var url = APP_URL+'/{{ config('spider.config.route_prefix') }}/user';
 
       $.ajax({
         type:"GET",
@@ -59,7 +59,7 @@
   function deletes(id)
   {
       var id = id;
-      var PATH = APP_URL+'/{{ config('spider.route_prefix') }}/users/'+id+'/delete';
+      var PATH = APP_URL+'/{{ config('spider.config.route_prefix') }}/users/'+id+'/delete';
 
       swal({   
         title: "Apakah Anda yakin?",   

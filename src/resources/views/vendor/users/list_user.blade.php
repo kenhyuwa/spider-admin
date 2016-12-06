@@ -32,7 +32,7 @@
       </td>
       <td>
         <center>
-          <a href="{{ URL(config('spider.route_prefix').'/users/'.base64_encode($user->id).'/detail') }}" class="btn btn-xs btn-flat btn-info"><i class="fa fa-eye"></i></a>
+          <a href="{{ URL(config('spider.config.route_prefix').'/users/'.base64_encode($user->id).'/detail') }}" class="btn btn-xs btn-flat btn-info"><i class="fa fa-eye"></i></a>
           <a type="button" onclick="deletes('{{ base64_encode($user->id) }}')" class="btn btn-xs btn-flat btn-danger"><i class="fa fa-trash-o"></i></a>
         </center>
       </td>

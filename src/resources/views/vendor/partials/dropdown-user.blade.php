@@ -36,13 +36,13 @@
     <!-- Menu Footer-->
     <li class="user-footer">
       <div class="pull-left">
-        <a href="{{ URL(config('spider.route_prefix').'/my-profile/'.base64_encode(auth()->user()->id)) }}" class="btn btn-info btn-flat">Profile</a>
+        <a href="{{ URL(config('spider.config.route_prefix').'/my-profile/'.base64_encode(auth()->user()->id)) }}" class="btn btn-info btn-flat">Profile</a>
       </div>
       <div class="pull-right">
-        <a href="{{ url(config('spider.route_prefix').'/logout') }}"
+        <a href="{{ url(config('spider.config.route_prefix').'/logout') }}"
           onclick="event.preventDefault();
                    document.getElementById('logout-form').submit();" class="btn btn-danger btn-flat">Sign out</a>
-           <form id="logout-form" action="{{ url(config('spider.route_prefix').'/logout') }}" method="POST" style="display: none;">
+           <form id="logout-form" action="{{ url(config('spider.config.route_prefix').'/logout') }}" method="POST" style="display: none;">
               {{ csrf_field() }}
           </form>
       </div>
