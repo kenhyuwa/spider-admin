@@ -24,7 +24,7 @@ Add the service provider to `config/app.php`
 ```php
 
 'providers' => [
-    Ken\SpiderAdmin\App\Providers\SpiderAdminServiceProvider::class,
+    Ken\SpiderAdmin\SpiderAdminServiceProvider::class,
     Collective\Html\HtmlServiceProvider::class, // laravelcollective/html class
     Intervention\Image\ImageServiceProvider::class, // intervention/image class
 ]
@@ -45,7 +45,7 @@ php artisan vendor:publish
 php artisan migrate
 ```
 ```
-composer dumpautoload
+composer dump-autoload
 ```
 ```
 php artisan db:seed --class=SpiderSeeder
@@ -96,7 +96,7 @@ protected $routeMiddleware = [
 ```
 ## Usage
 
-You can custom `views/vendor/spider/partials/customize/sidebar-menu.blade.php` for managemen menu.<br/>
+You can custom `views/vendor/spider/partials/customize/sidebar-menu.blade.php` for managemen menu App.<br/>
 You can custom `views/vendor/spider/partials/customize/dropdown.blade.php` for notifications
 
 If you create new blade, you must extends yours file like
@@ -109,7 +109,7 @@ If you create new blade, you must extends yours file like
 @endsection
 ```
 
-You can also create new file Javascript or CSS, 
+You can also create new file Javascript and CSS, 
 
 ```php
 @section('css')
@@ -123,7 +123,9 @@ You can also create new file Javascript or CSS,
 
 You can also create new `Route` in `Routes/web.php` and its no problem. but, you must create route prefix like 
 
-```php 
+```php
+<?php 
+
 Route::group(['prefix' => 'spider'] , function() {
    // yours route in here
 });
@@ -131,6 +133,8 @@ Route::group(['prefix' => 'spider'] , function() {
 if you not change route prefix yours App, or like 
 
 ```php 
+<?php 
+
 Route::group(['prefix' => config('spider.config.route_prefix')] , function() {
    // yours route in here
 });
@@ -138,6 +142,20 @@ Route::group(['prefix' => config('spider.config.route_prefix')] , function() {
 if you change route prefix yours App.
 
 You can customize `config/spider/config.php` for identity yours app and yours route prefix 
+
+```php 
+<?php
+
+return [
+    'title_name'            => 'Spider-AdminLTE',
+    'title_name_login'      => 'Spider-AdminLTE',
+    'route_prefix'          => 'spider',
+    'application_name_mini' => '<b><i>-d</i></b>',
+    'application_name'      => '<b>Spider</b><i>-AdminLTE</i>',
+    'developer_web'         => 'https://www.diaddemi.web.id',
+    'developer_name'        => 'Wahyu Dhira Ashandy'
+];
+```
 
 ### Basic
 
